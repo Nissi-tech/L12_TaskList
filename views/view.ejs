@@ -1,0 +1,43 @@
+<h1>Your Tasks</h1>
+
+<table border="1">
+    <tr>
+        <th>No.</th>
+        <th>Task</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+
+    <% tasks.forEach(function(task, index) { %>
+        <tr>
+            <td><%= index + 1 %></td>
+
+            <td>
+                <% if (task.done) { %>
+                    <strike><%= task.text %></strike>
+                <% } else { %>
+                    <%= task.text %>
+                <% } %>
+            </td>
+
+            <td>
+                <% if (task.done) { %>
+                    Done
+                <% } else { %>
+                    Not Done
+                <% } %>
+            </td>
+
+            <td>
+                <a href="/done/<%= index %>">Mark Done</a> |
+                <a href="/edit/<%= index %>">Edit</a> |
+                <a href="/delete/<%= index %>">Delete</a>
+            </td>
+        </tr>
+    <% }); %>
+
+</table>
+
+<br>
+
+<a href="/">Back to Home</a>

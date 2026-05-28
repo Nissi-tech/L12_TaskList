@@ -1,0 +1,9 @@
+<h1>Edit Task</h1>
+
+<form action="/edit/<%= index %>" method="POST">
+    <input type="text" name="task" value="<%= task.text %>" required>
+    <button type="submit">Update</button>
+</form>
+
+<a href="/view">Back</a>
+
