@@ -67,7 +67,7 @@ app.get("/updated", (req, res) => {
     res.render("updated");
 });
 
-// mark as done
+// mark task as done
 app.get("/done/:index", (req, res) => {
     const index = req.params.index;
     tasks[index].done = true;
